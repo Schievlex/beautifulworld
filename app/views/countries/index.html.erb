@@ -1,0 +1,9 @@
+<h1>Countries</h1>
+
+<style>
+
+</style>
+
+<% @countries.each do |country| %>
+<p><%= link_to country.name, country_path(country.id) %></p>
+<% end %>
