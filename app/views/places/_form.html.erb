@@ -1,0 +1,22 @@
+<%= form_for @place do |f| %>
+  <ul>
+    <% @place.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.label :rating {"Rating (1-10)"}%>
+  <%= f.number_field :rating %>
+
+  <%= f.submit (@place.new_record? ? "Create" : "Update") %>
+
+<% end %>

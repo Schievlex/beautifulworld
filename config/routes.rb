@@ -1,6 +1,8 @@
+
 Rails.application.routes.draw do
   root "countries#index"
   resources :countries
+  resources :places
 
   #get "countries" => "countries#index"
 
@@ -15,3 +17,4 @@ Rails.application.routes.draw do
 
 
 end
+
