@@ -3,3 +3,8 @@
 <p>Description: <%= @place.description %></p>
 <%= image_tag @place.image_url %>
 <p>Rating: <%= @place.rating %></p>
+
+<hr>
+
+<%= link_to "[Edit]", edit_place_path(@place.id) %>
+<%= link_to "[Destroy]", place_path(@place.id), method: :delete, data: { confirm: "Do you really want to destroy this beautiful place?" } %>

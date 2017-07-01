@@ -9,14 +9,39 @@ class PlacesController < ApplicationController
     @place = Place.new
     end
     def create
-    place_params = params.require(:place).permit(:name, :description, :image_url, :rating)
+    #place_params = params.require(:place).permit(:name, :description, :image_url, :rating)
 
     @place = Place.new(place_params)
 
-    if @place.save
+      if @place.save
        redirect_to @place
-    else
+     else
        render 'new'
+     end
     end
+  def edit
+    @place = Place.find(params[:id])
+  end
+  def update
+    @place = Place.find(params[:id])
+
+    #place_params = params.require(:place).permit(:name, :description, :image_url, :rating)
+
+    if @place.update_attributes(place_params)
+      redirect_to @place
+    else
+      render 'edit'
+    end
+  end
+  def destroy
+    @place = Place.find(params[:id])
+
+    @place.destroy
+
+    redirect_to places_path
+  end
+  private
+  def place_params
+    params.require(:place).permit(:name, :description, :image_url, :rating)
   end
 end
