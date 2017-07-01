@@ -6,7 +6,7 @@ class Country < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  validates :continent, length: { maximum: 50 }, allow_blank: true
+  validates :continent, length: { maximum: 500000 }, allow_blank: true
   validates :image_url, length: { maximum: 255 }, allow_blank: true
 
 

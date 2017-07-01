@@ -11,3 +11,4 @@
 <%= link_to "[Places]", root_path %>
 <%= link_to "[Edit]", edit_country_path(@country.id) %>
 <%= link_to "[Delete]", country_path(@country.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "[New Country]", new_country_path %>

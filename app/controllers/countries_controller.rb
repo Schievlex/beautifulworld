@@ -11,6 +11,10 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
   end
 
+  def new
+    @country = Country.new
+  end
+
   def create
       @country = Country.new(country_params)
 
@@ -21,7 +25,7 @@ class CountriesController < ApplicationController
       end
     end
 
-  def Update
+  def update
     @country = Country.find(params[:id])
 
     if @country.update_attributes(country_params)
