@@ -4,4 +4,8 @@
     root "places#index"
 
     get "places" => "places#index"
+    get 'places/new' => "places#new", as: :new_place
+    get "places/:id" => "places#show", as: :place
+
+    post "places" => "places#create"
   end
