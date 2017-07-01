@@ -1,0 +1,19 @@
+<%= form_for @country do |f| %>
+  <ul>
+  <% @country.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :continent {"Description"} %>
+  <%= f.text_field :continent %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.submit (@country.new_record? ? "Create" : "Update") %>
+
+<% end %>
